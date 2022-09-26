@@ -1,0 +1,5 @@
+interface RegClass {
+    classId: String!
+    className: String!
+    semester: String
+}

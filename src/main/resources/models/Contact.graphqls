@@ -1,0 +1,6 @@
+type Contact {
+    address: Address
+    email: String!
+    workPhone: String
+    mobilePhone: String!
+}

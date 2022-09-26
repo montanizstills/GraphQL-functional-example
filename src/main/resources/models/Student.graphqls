@@ -1,0 +1,20 @@
+type Student {
+    id: ID!
+    name: String!
+    contact: Contact
+    address: Address
+    regClass: [RegClass]
+    studentGradeLevelInfo: StudentGradeLevelInfo!
+}
+
+type StudentQuery {
+    allStudents: [Student]
+    student(name:String):Student
+}
+
+schema {
+    query: StudentQuery
+}
+
+
+
