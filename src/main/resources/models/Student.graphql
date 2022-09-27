@@ -12,9 +12,5 @@ type StudentQuery {
     student(name:String):Student
 }
 
-schema {
-    query: StudentQuery
-}
-
 
 
