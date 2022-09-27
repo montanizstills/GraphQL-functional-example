@@ -1,9 +1,6 @@
 package io.github.montanizstills.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,11 +12,11 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table
+@ToString
 @Entity
 public class Contact implements Serializable {
     @Id
-    @OneToOne(mappedBy = "id")
+    @OneToOne(optional = false,mappedBy = "id")
     private Student student;
     @OneToOne
     private Address address;

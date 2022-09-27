@@ -17,6 +17,7 @@ public class DataCreationController {
 
     @PostMapping(path = "student/")
     public ResponseEntity<Student> createStudent(@RequestBody String requestBody){
+
         return new ResponseEntity<>(new Student(), HttpStatus.OK);
     }
 }

@@ -1,9 +1,6 @@
 package io.github.montanizstills.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -12,11 +9,11 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table
+@ToString
 @Entity
 public class Address implements Serializable {
     @Id
-    @OneToOne(mappedBy = "id")
+    @OneToOne(optional = false,mappedBy = "id")
     private Student student;
     private String addressLine1;
     private String addressLine2;
@@ -25,5 +22,8 @@ public class Address implements Serializable {
     private Integer postalCode;
     private String country;
 
-
+    public Address usingAddressLine1(String addressLine1){
+        this.setAddressLine1(addressLine1);
+        return this;
+    }
 }

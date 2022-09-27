@@ -1,9 +1,6 @@
 package io.github.montanizstills.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,13 +10,13 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table
+@ToString
 @Entity
 public class Schedule implements Serializable {
     @Id
-    @OneToOne(mappedBy = "id")
+    @OneToOne(optional = false,mappedBy = "id")
     private Student student;
-    @OneToMany
+    @OneToMany @ToString.Exclude
     private List<Class> classes;
 
 
