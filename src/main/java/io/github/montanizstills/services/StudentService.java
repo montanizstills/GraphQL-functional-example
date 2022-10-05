@@ -23,7 +23,7 @@ import java.util.stream.Stream;
 @Service
 public class StudentService {
 
-    @Value("classpath:students.graphql")
+    @Value("classpath:Student.graphql")
     Resource resource;
 
     private GraphQL graphQL;

@@ -13,8 +13,8 @@ import java.io.Serializable;
 @ToString
 @Entity
 public class StudentGradeLevelInfo implements Serializable {
-    @Id
-    @OneToOne(optional = false, mappedBy = "id")
+
+    @OneToOne(optional = false, mappedBy = "id", cascade = CascadeType.ALL)
     private Student student;
     private Integer freshmanYear;
     private Integer expectedGradYear;
@@ -25,6 +25,14 @@ public class StudentGradeLevelInfo implements Serializable {
     private Integer currentCreditsCompleted;
     private Integer creditsReqToGraduate;
 
+    @Id
+    public String getId() {
+        return this.student.getId();
+    }
+
+    public void setId(String id) {
+        this.student.setId(id);
+    }
 }
 
 

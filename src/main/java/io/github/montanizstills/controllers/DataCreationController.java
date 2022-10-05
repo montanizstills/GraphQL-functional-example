@@ -1,5 +1,6 @@
 package io.github.montanizstills.controllers;
 
+import io.github.montanizstills.models.Class;
 import io.github.montanizstills.models.Student;
 import io.github.montanizstills.services.DataCreationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,5 +20,11 @@ public class DataCreationController {
     public ResponseEntity<Student> createStudent(@RequestBody String requestBody){
 
         return new ResponseEntity<>(new Student(), HttpStatus.OK);
+    }
+
+    @PostMapping(path = "class/")
+    public ResponseEntity createClass(@RequestBody String requestBody){
+
+        return new ResponseEntity(new Class(), HttpStatus.OK);
     }
 }

@@ -12,8 +12,8 @@ import java.io.Serializable;
 @ToString
 @Entity
 public class Address implements Serializable {
-    @Id
-    @OneToOne(optional = false,mappedBy = "id")
+
+    @OneToOne(optional = false, mappedBy = "id", cascade = CascadeType.ALL)
     private Student student;
     private String addressLine1;
     private String addressLine2;
@@ -22,8 +22,12 @@ public class Address implements Serializable {
     private Integer postalCode;
     private String country;
 
-    public Address usingAddressLine1(String addressLine1){
-        this.setAddressLine1(addressLine1);
-        return this;
+    @Id
+    public String getId() {
+        return this.student.getId();
+    }
+
+    public void setId(String id) {
+        this.student.setId(id);
     }
 }

@@ -2,10 +2,7 @@ package io.github.montanizstills.models;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Getter
@@ -15,8 +12,8 @@ import java.io.Serializable;
 @ToString
 @Entity
 public class Contact implements Serializable {
-    @Id
-    @OneToOne(optional = false,mappedBy = "id")
+
+    @OneToOne(optional = false, mappedBy = "id", cascade = CascadeType.ALL)
     private Student student;
     @OneToOne
     private Address address;
@@ -24,5 +21,12 @@ public class Contact implements Serializable {
     private String workPhone;
     private String mobilePhone;
 
+    @Id
+    public String getId() {
+        return this.student.getId();
+    }
 
+    public void setId(String id) {
+        this.student.setId(id);
+    }
 }

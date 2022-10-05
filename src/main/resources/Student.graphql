@@ -1,3 +1,10 @@
+scalar Student
+scalar Address
+scalar RegClass
+scalar Contact
+scalar Schedule
+scalar StudentGradeLevelInfo
+
 type Student {
     id: ID!
     name: String!
@@ -11,6 +18,7 @@ type StudentQuery {
     allStudents: [Student]
     student(name:String):Student
 }
+
 
 
 

@@ -13,11 +13,19 @@ import java.util.List;
 @ToString
 @Entity
 public class Schedule implements Serializable {
-    @Id
-    @OneToOne(optional = false,mappedBy = "id")
+
+    @OneToOne(optional = false, mappedBy = "id", cascade = CascadeType.ALL)
     private Student student;
-    @OneToMany @ToString.Exclude
+    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ToString.Exclude
     private List<Class> classes;
 
+    @Id
+    public String getId() {
+        return this.student.getId();
+    }
 
+    public void setId(String id) {
+        this.student.setId(id);
+    }
 }
