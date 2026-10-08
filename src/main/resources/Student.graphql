@@ -1,0 +1,24 @@
+scalar Student
+scalar Address
+scalar RegClass
+scalar Contact
+scalar Schedule
+scalar StudentGradeLevelInfo
+
+type Student {
+    id: ID!
+    name: String!
+    contact: Contact
+    address: Address
+    regClass: [RegClass]
+    studentGradeLevelInfo: StudentGradeLevelInfo!
+}
+
+type StudentQuery {
+    allStudents: [Student]
+    student(name:String):Student
+}
+
+
+
+

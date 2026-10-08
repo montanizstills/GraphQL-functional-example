@@ -1,0 +1,10 @@
+type StudentGradeLevelInfo{
+    freshmanYear: Int!
+    expectedGradYear: Int
+    major: String!
+    minor: String
+    gpa: Float
+    isInGoodAcademicStanding: Boolean
+    currentCreditsCompleted: Int
+    creditsReqToGraduate:Int
+}

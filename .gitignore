@@ -1,0 +1,9 @@
+**/.jpb/
+**/.jpb/**
+**/.idea/
+**/.idea/**
+.idea/
+**/target/
+target/
+**/.graphqlconfig
+**/application.properties
